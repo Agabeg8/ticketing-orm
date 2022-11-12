@@ -20,7 +20,7 @@ public class User extends BaseEntity {
     private boolean enabled;
     private String phone;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id")
     private Role role;
 
