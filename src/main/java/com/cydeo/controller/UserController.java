@@ -17,9 +17,9 @@ public class UserController {
     private final UserService userService;
     private final RoleService roleService;
 
-    public UserController(RoleService roleService, UserService userService) {
-        this.roleService = roleService;
+    public UserController(UserService userService, RoleService roleService) {
         this.userService = userService;
+        this.roleService = roleService;
     }
 
     @GetMapping("/create")
@@ -80,7 +80,7 @@ public class UserController {
 
     @GetMapping("/delete/{username}")
     public String deleteUser(@PathVariable("username") String username) {
-        //userService.deleteByUserName(username);
+//        userService.deleteByUserName(username);
         userService.delete(username);
         return "redirect:/user/create";
     }
