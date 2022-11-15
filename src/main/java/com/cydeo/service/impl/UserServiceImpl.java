@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -26,8 +27,8 @@ public class UserServiceImpl implements UserService {
 
         List<User> userList = userRepository.findAll(Sort.by("firstName"));
 
+        return userList.stream().map(userMapper::convertToDTO).collect(Collectors.toList());
 
-        return userList;
     }
 
     @Override
@@ -37,6 +38,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(UserDTO dto) {
+
+        userRepository.save(userMapper.convertToEntity(dto));
 
     }
 
