@@ -16,24 +16,24 @@ import java.util.List;
 @RequestMapping("/project")
 public class ProjectController {
 
-    private final ProjectService projectService;
-    private final UserService userService;
-
-    public ProjectController(ProjectService projectService, UserService userService) {
-        this.projectService = projectService;
-        this.userService = userService;
-    }
-
-    @GetMapping("/create")
-    public String createProject(Model model) {
-
-        model.addAttribute("project", new ProjectDTO());
-        model.addAttribute("projects", projectService.listAllProjects());
-        model.addAttribute("managers", userService.listAllUser());
-
-        return "/project/create";
-
-    }
+//    private final ProjectService projectService;
+//    private final UserService userService;
+//
+//    public ProjectController(ProjectService projectService, UserService userService) {
+//        this.projectService = projectService;
+//        this.userService = userService;
+//    }
+//
+//    @GetMapping("/create")
+//    public String createProject(Model model) {
+//
+//        model.addAttribute("project", new ProjectDTO());
+//        model.addAttribute("projects", projectService.listAllProjects());
+//        model.addAttribute("managers", userService.listAllUser());
+//
+//        return "/project/create";
+//
+//    }
 //
 //    @PostMapping("/create")
 //    public String insertProject(@Valid @ModelAttribute("project") ProjectDTO project, BindingResult bindingResult, Model model) {
