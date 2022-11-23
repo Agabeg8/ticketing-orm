@@ -1,8 +1,6 @@
 package com.cydeo.entity;
 
-
 import com.cydeo.enums.Status;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,12 +11,11 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "tasks")
-@Data
 @NoArgsConstructor
 @Getter
 @Setter
 @Where(clause = "is_deleted=false")
-public class Task extends BaseEntity{
+public class Task extends BaseEntity {
 
     private String taskSubject;
     private String taskDetail;
@@ -34,4 +31,23 @@ public class Task extends BaseEntity{
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Project project;
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
