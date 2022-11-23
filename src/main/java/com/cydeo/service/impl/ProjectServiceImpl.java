@@ -77,4 +77,9 @@ public class ProjectServiceImpl implements ProjectService {
         projectRepository.save(project);
 
     }
+
+    @Override
+    public List<ProjectDTO> listAllProjectDetails() {
+        return null;
+    }
 }
