@@ -1,8 +1,11 @@
 package com.cydeo.repository;
 
+import com.cydeo.entity.Project;
 import com.cydeo.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
 
 public interface TaskRepository extends JpaRepository<Task,Long> {
 
@@ -16,4 +19,11 @@ public interface TaskRepository extends JpaRepository<Task,Long> {
     int totalCompletedTasks(String projectCode);
 
 
+    List<Task> findAllByProject(Project project);
 }
+
+
+
+
+
+
